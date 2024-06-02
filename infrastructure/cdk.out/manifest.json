@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/72d44f4f46f41e4dc02d48ced71154eba302af4e37e3b43b3f260f4fa5a0d73c.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/40b99e71f82fbc846e48912bf9a8fb9a2a64651748872a371eee997ac1529292.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -44,6 +44,54 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "mailchimpwebhooks5E793719"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApi49610EDF"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiDeploymentECB0D05Ec33eb4ab8566716118bd82bc00dbfc9a"
+          }
+        ],
+        "/mailchimp-stack/MyApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiDeploymentStageprodE1054AF0"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiEndpoint869ABE96"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Default/GET/ApiPermission.mailchimpstackMyApi9763886B.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGETApiPermissionmailchimpstackMyApi9763886BGETDCB81D92"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Default/GET/ApiPermission.Test.mailchimpstackMyApi9763886B.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGETApiPermissionTestmailchimpstackMyApi9763886BGETA3410D61"
+          }
+        ],
+        "/mailchimp-stack/MyApi/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGETD0C7AA0C"
+          }
+        ],
+        "/mailchimp-stack/ApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiEndpoint"
           }
         ],
         "/mailchimp-stack/CDKMetadata/Default": [

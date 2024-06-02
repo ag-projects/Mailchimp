@@ -48,3 +48,4 @@ build/
 !/.idea/workspace.xml
 !/.idea/compiler.xml
 !/.idea/jarRepositories.xml
+!/infrastructure/target/

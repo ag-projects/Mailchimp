@@ -1,8 +1,10 @@
 package com.myorg;
 
+import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.Duration;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
+import software.amazon.awscdk.services.apigateway.*;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
 import software.amazon.awscdk.services.lambda.Runtime;
@@ -16,8 +18,6 @@ public class InfrastructureStack extends Stack {
     public InfrastructureStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
 
-        // The code that defines your stack goes here
-
         // Define Lambda Function
         Function lambdaFunction = Function.Builder.create(this, "mailchimp-webhooks")
                 .memorySize(1024)
@@ -27,5 +27,23 @@ public class InfrastructureStack extends Stack {
                 .code(Code.fromAsset("../assets/function.jar"))
                 .handler("com.quickfee.lambda.WebhooksHandler::handleRequest")
                 .build();
+
+        // Create API Gateway
+        RestApi api = RestApi.Builder.create(this, "MyApi")
+                .build();
+
+        // Create Integration between Lambda and API Gateway
+        LambdaIntegration lambdaIntegration = LambdaIntegration.Builder.create(lambdaFunction)
+                .build();
+
+        // Create API Gateway Method
+        api.getRoot().addMethod("GET", lambdaIntegration);
+
+        // Output the API Gateway endpoint
+        CfnOutput.Builder.create(this, "ApiEndpoint")
+                .value(api.getUrl())
+                .build();
+
+
     }
 }

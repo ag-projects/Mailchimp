@@ -41,7 +41,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8.jar"
+     "S3Key": "b0cc2df2709f0f043bf48c14bbb606a79a0fa46de6ce86606fea5e145fcb8799.jar"
     },
     "FunctionName": "MailchimpWebhooksLambda",
     "Handler": "com.quickfee.lambda.WebhooksHandler::handleRequest",
@@ -60,20 +60,243 @@
    ],
    "Metadata": {
     "aws:cdk:path": "mailchimp-stack/mailchimp-webhooks/Resource",
-    "aws:asset:path": "asset.c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8.jar",
+    "aws:asset:path": "asset.b0cc2df2709f0f043bf48c14bbb606a79a0fa46de6ce86606fea5e145fcb8799.jar",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
+   }
+  },
+  "MyApi49610EDF": {
+   "Type": "AWS::ApiGateway::RestApi",
+   "Properties": {
+    "Name": "MyApi"
+   },
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/Resource"
+   }
+  },
+  "MyApiDeploymentECB0D05Ec33eb4ab8566716118bd82bc00dbfc9a": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "Description": "Automatically created by the RestApi construct",
+    "RestApiId": {
+     "Ref": "MyApi49610EDF"
+    }
+   },
+   "DependsOn": [
+    "MyApiGETD0C7AA0C"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/Deployment/Resource"
+   }
+  },
+  "MyApiDeploymentStageprodE1054AF0": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "DeploymentId": {
+     "Ref": "MyApiDeploymentECB0D05Ec33eb4ab8566716118bd82bc00dbfc9a"
+    },
+    "RestApiId": {
+     "Ref": "MyApi49610EDF"
+    },
+    "StageName": "prod"
+   },
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/DeploymentStage.prod/Resource"
+   }
+  },
+  "MyApiGETApiPermissionmailchimpstackMyApi9763886BGETDCB81D92": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "mailchimpwebhooks5E793719",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:",
+       {
+        "Ref": "AWS::Region"
+       },
+       ":",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":",
+       {
+        "Ref": "MyApi49610EDF"
+       },
+       "/",
+       {
+        "Ref": "MyApiDeploymentStageprodE1054AF0"
+       },
+       "/GET/"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/Default/GET/ApiPermission.mailchimpstackMyApi9763886B.GET.."
+   }
+  },
+  "MyApiGETApiPermissionTestmailchimpstackMyApi9763886BGETA3410D61": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "mailchimpwebhooks5E793719",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:",
+       {
+        "Ref": "AWS::Region"
+       },
+       ":",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":",
+       {
+        "Ref": "MyApi49610EDF"
+       },
+       "/test-invoke-stage/GET/"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/Default/GET/ApiPermission.Test.mailchimpstackMyApi9763886B.GET.."
+   }
+  },
+  "MyApiGETD0C7AA0C": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:",
+        {
+         "Ref": "AWS::Region"
+        },
+        ":lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "mailchimpwebhooks5E793719",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "MyApi49610EDF",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "MyApi49610EDF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "mailchimp-stack/MyApi/Default/GET/Resource"
    }
   },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWNSw6DMAxEz8I+uPwuUJC66JIeAJmQIjchkXDSLiLu3gBi9cbzZE0FZdNAkeGPcznp3NAI8eVRapGqIRpcxgkhPoKVnpwV3dteeROEC8TeGbXXOzfB9YDMyjPcd6Qb2iC18i1y0r1iF1apxGHT0Ex2Pr4vkXLn7ETnwhO/eKtKKKDOPkyUr8F6WhT0J/8fccuAwAAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01PW27DMAw7S/8dra8LtB32MWBY0R2gUB0t0xLbQSS3KILcfbZTDP0iKZKWvIbVdgvLBd6ksnVbdXyB8UvRtiaNzmOH7lIjjG/RW+XgzeHbP/MjDY5FkpoMo4PxFDrKRsbJyOaMIqQCuwxJwz7alnSPQgZ7blDphvfUI9Fdz6X6oK/Ud+HuyGuePql0X1OWzCTlQxwslTc/SH9Cnc2ZTdO/b8oNucO+yYnPqH3Ux8o5kvgh+Jq1/Ogdr/iyXsESNotfYa6G6JUdwWnGPzJL/jo+AQAA"
    },
    "Metadata": {
     "aws:cdk:path": "mailchimp-stack/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "MyApiEndpoint869ABE96": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "MyApi49610EDF"
+      },
+      ".execute-api.",
+      {
+       "Ref": "AWS::Region"
+      },
+      ".",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "MyApiDeploymentStageprodE1054AF0"
+      },
+      "/"
+     ]
+    ]
+   }
+  },
+  "ApiEndpoint": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "MyApi49610EDF"
+      },
+      ".execute-api.",
+      {
+       "Ref": "AWS::Region"
+      },
+      ".",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "MyApiDeploymentStageprodE1054AF0"
+      },
+      "/"
+     ]
+    ]
+   }
   }
  },
  "Conditions": {
