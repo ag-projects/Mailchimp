@@ -1,0 +1,196 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "mailchimp-stack": {
+        "id": "mailchimp-stack",
+        "path": "mailchimp-stack",
+        "children": {
+          "mailchimp-webhooks": {
+            "id": "mailchimp-webhooks",
+            "path": "mailchimp-stack/mailchimp-webhooks",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.144.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.144.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.144.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "mailchimp-stack/mailchimp-webhooks/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "mailchimp-stack/mailchimp-webhooks/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.144.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "mailchimp-stack/mailchimp-webhooks/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.144.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.144.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "mailchimp-stack/mailchimp-webhooks/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8.jar"
+                    },
+                    "functionName": "MailchimpWebhooksLambda",
+                    "handler": "com.quickfee.lambda.WebhooksHandler::handleRequest",
+                    "memorySize": 1024,
+                    "role": {
+                      "Fn::GetAtt": [
+                        "mailchimpwebhooksServiceRole34FE4906",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "java21",
+                    "timeout": 20
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.144.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "mailchimp-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "mailchimp-stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.144.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "mailchimp-stack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "mailchimp-stack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.144.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "mailchimp-stack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.144.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.144.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.144.0"
+    }
+  }
+}

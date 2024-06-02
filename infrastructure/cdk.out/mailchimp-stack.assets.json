@@ -1,0 +1,32 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8": {
+      "source": {
+        "path": "asset.c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8.jar",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "c383266efaaf69f48f0bf4fd798bf3a0b0f21e98f041bf797955b74ce98c5fa8.jar",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "72d44f4f46f41e4dc02d48ced71154eba302af4e37e3b43b3f260f4fa5a0d73c": {
+      "source": {
+        "path": "mailchimp-stack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "72d44f4f46f41e4dc02d48ced71154eba302af4e37e3b43b3f260f4fa5a0d73c.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
