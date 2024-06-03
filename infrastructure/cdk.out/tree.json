@@ -8,17 +8,17 @@
         "id": "mailchimp-stack",
         "path": "mailchimp-stack",
         "children": {
-          "mailchimp-webhooks": {
-            "id": "mailchimp-webhooks",
-            "path": "mailchimp-stack/mailchimp-webhooks",
+          "mail-chimp-webhooks": {
+            "id": "mail-chimp-webhooks",
+            "path": "mailchimp-stack/mail-chimp-webhooks",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole",
+                "path": "mailchimp-stack/mail-chimp-webhooks/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole/ImportServiceRole",
+                    "path": "mailchimp-stack/mail-chimp-webhooks/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.144.0"
@@ -26,7 +26,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "mailchimp-stack/mailchimp-webhooks/ServiceRole/Resource",
+                    "path": "mailchimp-stack/mail-chimp-webhooks/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -71,11 +71,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "mailchimp-stack/mailchimp-webhooks/Code",
+                "path": "mailchimp-stack/mail-chimp-webhooks/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "mailchimp-stack/mailchimp-webhooks/Code/Stage",
+                    "path": "mailchimp-stack/mail-chimp-webhooks/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.144.0"
@@ -83,7 +83,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "mailchimp-stack/mailchimp-webhooks/Code/AssetBucket",
+                    "path": "mailchimp-stack/mail-chimp-webhooks/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.144.0"
@@ -97,7 +97,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "mailchimp-stack/mailchimp-webhooks/Resource",
+                "path": "mailchimp-stack/mail-chimp-webhooks/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
@@ -105,14 +105,14 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "b0cc2df2709f0f043bf48c14bbb606a79a0fa46de6ce86606fea5e145fcb8799.jar"
+                      "s3Key": "d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar"
                     },
                     "functionName": "MailchimpWebhooksLambda",
                     "handler": "com.quickfee.lambda.WebhooksHandler::handleRequest",
                     "memorySize": 1024,
                     "role": {
                       "Fn::GetAtt": [
-                        "mailchimpwebhooksServiceRole34FE4906",
+                        "mailchimpwebhooksServiceRoleAAEFD1D3",
                         "Arn"
                       ]
                     },
@@ -187,7 +187,7 @@
                       "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
                       "aws:cdk:cloudformation:props": {
                         "deploymentId": {
-                          "Ref": "WebhooksApiDeploymentEF72CF33d31d27589596d2cb173aae9447e7f626"
+                          "Ref": "WebhooksApiDeploymentEF72CF3381851878dbaf78d2c39a0aad6daa98dc"
                         },
                         "restApiId": {
                           "Ref": "WebhooksApi8F11D858"
@@ -231,7 +231,7 @@
                             "action": "lambda:InvokeFunction",
                             "functionName": {
                               "Fn::GetAtt": [
-                                "mailchimpwebhooks5E793719",
+                                "mailchimpwebhooksDA3805B6",
                                 "Arn"
                               ]
                             },
@@ -258,7 +258,7 @@
                                   },
                                   "/",
                                   {
-                                    "Ref": "WebhooksApiDeploymentStageprodB8982701"
+                                    "Ref": "TestStage3097EB68"
                                   },
                                   "/HEAD/"
                                 ]
@@ -280,7 +280,7 @@
                             "action": "lambda:InvokeFunction",
                             "functionName": {
                               "Fn::GetAtt": [
-                                "mailchimpwebhooks5E793719",
+                                "mailchimpwebhooksDA3805B6",
                                 "Arn"
                               ]
                             },
@@ -341,7 +341,7 @@
                                     ":lambda:path/2015-03-31/functions/",
                                     {
                                       "Fn::GetAtt": [
-                                        "mailchimpwebhooks5E793719",
+                                        "mailchimpwebhooksDA3805B6",
                                         "Arn"
                                       ]
                                     },
@@ -386,7 +386,7 @@
                             "action": "lambda:InvokeFunction",
                             "functionName": {
                               "Fn::GetAtt": [
-                                "mailchimpwebhooks5E793719",
+                                "mailchimpwebhooksDA3805B6",
                                 "Arn"
                               ]
                             },
@@ -413,7 +413,7 @@
                                   },
                                   "/",
                                   {
-                                    "Ref": "WebhooksApiDeploymentStageprodB8982701"
+                                    "Ref": "TestStage3097EB68"
                                   },
                                   "/POST/"
                                 ]
@@ -435,7 +435,7 @@
                             "action": "lambda:InvokeFunction",
                             "functionName": {
                               "Fn::GetAtt": [
-                                "mailchimpwebhooks5E793719",
+                                "mailchimpwebhooksDA3805B6",
                                 "Arn"
                               ]
                             },
@@ -496,7 +496,7 @@
                                     ":lambda:path/2015-03-31/functions/",
                                     {
                                       "Fn::GetAtt": [
-                                        "mailchimpwebhooks5E793719",
+                                        "mailchimpwebhooksDA3805B6",
                                         "Arn"
                                       ]
                                     },
@@ -540,9 +540,123 @@
               "version": "2.144.0"
             }
           },
-          "ApiEndpoint": {
-            "id": "ApiEndpoint",
-            "path": "mailchimp-stack/ApiEndpoint",
+          "DevDeployment": {
+            "id": "DevDeployment",
+            "path": "mailchimp-stack/DevDeployment",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "mailchimp-stack/DevDeployment/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "Dev Staging",
+                    "restApiId": {
+                      "Ref": "WebhooksApi8F11D858"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+              "version": "2.144.0"
+            }
+          },
+          "DevStage": {
+            "id": "DevStage",
+            "path": "mailchimp-stack/DevStage",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "mailchimp-stack/DevStage/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                  "aws:cdk:cloudformation:props": {
+                    "deploymentId": {
+                      "Ref": "DevDeployment8D9B654D3ce97d0f803d1d49b80e435489af9c4a"
+                    },
+                    "restApiId": {
+                      "Ref": "WebhooksApi8F11D858"
+                    },
+                    "stageName": "dev"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Stage",
+              "version": "2.144.0"
+            }
+          },
+          "TestDeployment": {
+            "id": "TestDeployment",
+            "path": "mailchimp-stack/TestDeployment",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "mailchimp-stack/TestDeployment/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "Test Staging",
+                    "restApiId": {
+                      "Ref": "WebhooksApi8F11D858"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+              "version": "2.144.0"
+            }
+          },
+          "TestStage": {
+            "id": "TestStage",
+            "path": "mailchimp-stack/TestStage",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "mailchimp-stack/TestStage/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                  "aws:cdk:cloudformation:props": {
+                    "deploymentId": {
+                      "Ref": "TestDeploymentD77B56863ce97d0f803d1d49b80e435489af9c4a"
+                    },
+                    "restApiId": {
+                      "Ref": "WebhooksApi8F11D858"
+                    },
+                    "stageName": "test"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                  "version": "2.144.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Stage",
+              "version": "2.144.0"
+            }
+          },
+          "WebhooksApiEndpoint": {
+            "id": "WebhooksApiEndpoint",
+            "path": "mailchimp-stack/WebhooksApiEndpoint",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnOutput",
               "version": "2.144.0"

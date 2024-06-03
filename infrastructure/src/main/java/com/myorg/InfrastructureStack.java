@@ -19,7 +19,7 @@ public class InfrastructureStack extends Stack {
         super(scope, id, props);
 
         // Define Lambda Function
-        Function lambdaFunction = Function.Builder.create(this, "mailchimp-webhooks")
+        Function lambdaFunction = Function.Builder.create(this, "mail-chimp-webhooks")
                 .memorySize(1024)
                 .runtime(Runtime.JAVA_21)
                 .timeout(Duration.seconds(20))
@@ -40,11 +40,32 @@ public class InfrastructureStack extends Stack {
         api.getRoot().addMethod("HEAD", lambdaIntegration);
         api.getRoot().addMethod("POST", lambdaIntegration);
 
+        // Create API dev and test stages
+        Deployment devDeployment = createDeployment(api, "DevDeployment", "Dev Staging");
+        Stage devStage = createStage("DevStage", "dev", devDeployment);
+        api.setDeploymentStage(devStage);
+        Deployment testDeployment = createDeployment(api, "TestDeployment","Test Staging");
+        Stage testStage = createStage("TestStage", "test", testDeployment);
+        api.setDeploymentStage(testStage);
+
         // Output the API Gateway endpoint
-        CfnOutput.Builder.create(this, "ApiEndpoint")
+        CfnOutput.Builder.create(this, "WebhooksApiEndpoint")
                 .value(api.getUrl())
                 .build();
 
+    }
 
+    private Deployment createDeployment(RestApi api, String deploymentId, String stageDescription) {
+       return new Deployment(this, deploymentId, DeploymentProps.builder()
+                .api(api)
+                .description(stageDescription)
+                .build());
+    }
+
+    private Stage createStage(String stageId, String stageName, Deployment deployment) {
+        return new Stage(this, stageId, StageProps.builder()
+                .stageName(stageName)
+                .deployment(deployment)
+                .build());
     }
 }

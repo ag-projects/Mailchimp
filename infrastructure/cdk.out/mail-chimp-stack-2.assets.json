@@ -1,28 +1,28 @@
 {
   "version": "36.0.0",
   "files": {
-    "d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558": {
+    "7e3d61d3d5b5b28da188f5fbde8ac9dd68d46b814d89a67f2346c2908a37d8e4": {
       "source": {
-        "path": "asset.d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar",
+        "path": "asset.7e3d61d3d5b5b28da188f5fbde8ac9dd68d46b814d89a67f2346c2908a37d8e4.jar",
         "packaging": "file"
       },
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar",
+          "objectKey": "7e3d61d3d5b5b28da188f5fbde8ac9dd68d46b814d89a67f2346c2908a37d8e4.jar",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "6de408a36888537104b2dc6c7d30e929f1bbef152ec0ef8bb200dea35b5f8472": {
+    "bf55ee7a9b3a2f620c29512edc431bd3b15c0c78e7a66905e40648fed87e6fee": {
       "source": {
-        "path": "mailchimp-stack.template.json",
+        "path": "mail-chimp-stack-2.template.json",
         "packaging": "file"
       },
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "6de408a36888537104b2dc6c7d30e929f1bbef152ec0ef8bb200dea35b5f8472.json",
+          "objectKey": "bf55ee7a9b3a2f620c29512edc431bd3b15c0c78e7a66905e40648fed87e6fee.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

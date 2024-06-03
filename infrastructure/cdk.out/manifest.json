@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/073f01fb2969d0025818e51c52d55f5bb2b3352f58f3bcf275d1cfe8abc4eee9.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6de408a36888537104b2dc6c7d30e929f1bbef152ec0ef8bb200dea35b5f8472.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -34,16 +34,16 @@
         "mailchimp-stack.assets"
       ],
       "metadata": {
-        "/mailchimp-stack/mailchimp-webhooks/ServiceRole/Resource": [
+        "/mailchimp-stack/mail-chimp-webhooks/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "mailchimpwebhooksServiceRole34FE4906"
+            "data": "mailchimpwebhooksServiceRoleAAEFD1D3"
           }
         ],
-        "/mailchimp-stack/mailchimp-webhooks/Resource": [
+        "/mailchimp-stack/mail-chimp-webhooks/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "mailchimpwebhooks5E793719"
+            "data": "mailchimpwebhooksDA3805B6"
           }
         ],
         "/mailchimp-stack/WebhooksApi/Resource": [
@@ -55,7 +55,7 @@
         "/mailchimp-stack/WebhooksApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WebhooksApiDeploymentEF72CF33d31d27589596d2cb173aae9447e7f626"
+            "data": "WebhooksApiDeploymentEF72CF3381851878dbaf78d2c39a0aad6daa98dc"
           }
         ],
         "/mailchimp-stack/WebhooksApi/DeploymentStage.prod/Resource": [
@@ -106,10 +106,34 @@
             "data": "WebhooksApiPOST1C0617D8"
           }
         ],
-        "/mailchimp-stack/ApiEndpoint": [
+        "/mailchimp-stack/DevDeployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ApiEndpoint"
+            "data": "DevDeployment8D9B654D3ce97d0f803d1d49b80e435489af9c4a"
+          }
+        ],
+        "/mailchimp-stack/DevStage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStage520A913F"
+          }
+        ],
+        "/mailchimp-stack/TestDeployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestDeploymentD77B56863ce97d0f803d1d49b80e435489af9c4a"
+          }
+        ],
+        "/mailchimp-stack/TestStage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestStage3097EB68"
+          }
+        ],
+        "/mailchimp-stack/WebhooksApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebhooksApiEndpoint"
           }
         ],
         "/mailchimp-stack/CDKMetadata/Default": [
