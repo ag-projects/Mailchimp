@@ -14,7 +14,7 @@
         }
       }
     },
-    "40b99e71f82fbc846e48912bf9a8fb9a2a64651748872a371eee997ac1529292": {
+    "073f01fb2969d0025818e51c52d55f5bb2b3352f58f3bcf275d1cfe8abc4eee9": {
       "source": {
         "path": "mailchimp-stack.template.json",
         "packaging": "file"
@@ -22,7 +22,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "40b99e71f82fbc846e48912bf9a8fb9a2a64651748872a371eee997ac1529292.json",
+          "objectKey": "073f01fb2969d0025818e51c52d55f5bb2b3352f58f3bcf275d1cfe8abc4eee9.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

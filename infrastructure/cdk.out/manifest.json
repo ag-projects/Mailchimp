@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/40b99e71f82fbc846e48912bf9a8fb9a2a64651748872a371eee997ac1529292.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/073f01fb2969d0025818e51c52d55f5bb2b3352f58f3bcf275d1cfe8abc4eee9.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -46,46 +46,64 @@
             "data": "mailchimpwebhooks5E793719"
           }
         ],
-        "/mailchimp-stack/MyApi/Resource": [
+        "/mailchimp-stack/WebhooksApi/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApi49610EDF"
+            "data": "WebhooksApi8F11D858"
           }
         ],
-        "/mailchimp-stack/MyApi/Deployment/Resource": [
+        "/mailchimp-stack/WebhooksApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiDeploymentECB0D05Ec33eb4ab8566716118bd82bc00dbfc9a"
+            "data": "WebhooksApiDeploymentEF72CF33d31d27589596d2cb173aae9447e7f626"
           }
         ],
-        "/mailchimp-stack/MyApi/DeploymentStage.prod/Resource": [
+        "/mailchimp-stack/WebhooksApi/DeploymentStage.prod/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiDeploymentStageprodE1054AF0"
+            "data": "WebhooksApiDeploymentStageprodB8982701"
           }
         ],
-        "/mailchimp-stack/MyApi/Endpoint": [
+        "/mailchimp-stack/WebhooksApi/Endpoint": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiEndpoint869ABE96"
+            "data": "WebhooksApiEndpoint2E588B1D"
           }
         ],
-        "/mailchimp-stack/MyApi/Default/GET/ApiPermission.mailchimpstackMyApi9763886B.GET..": [
+        "/mailchimp-stack/WebhooksApi/Default/HEAD/ApiPermission.mailchimpstackWebhooksApi76E76A69.HEAD..": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiGETApiPermissionmailchimpstackMyApi9763886BGETDCB81D92"
+            "data": "WebhooksApiHEADApiPermissionmailchimpstackWebhooksApi76E76A69HEAD2EC27477"
           }
         ],
-        "/mailchimp-stack/MyApi/Default/GET/ApiPermission.Test.mailchimpstackMyApi9763886B.GET..": [
+        "/mailchimp-stack/WebhooksApi/Default/HEAD/ApiPermission.Test.mailchimpstackWebhooksApi76E76A69.HEAD..": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiGETApiPermissionTestmailchimpstackMyApi9763886BGETA3410D61"
+            "data": "WebhooksApiHEADApiPermissionTestmailchimpstackWebhooksApi76E76A69HEAD8E5BB72F"
           }
         ],
-        "/mailchimp-stack/MyApi/Default/GET/Resource": [
+        "/mailchimp-stack/WebhooksApi/Default/HEAD/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MyApiGETD0C7AA0C"
+            "data": "WebhooksApiHEADA499F47D"
+          }
+        ],
+        "/mailchimp-stack/WebhooksApi/Default/POST/ApiPermission.mailchimpstackWebhooksApi76E76A69.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebhooksApiPOSTApiPermissionmailchimpstackWebhooksApi76E76A69POSTB4A06382"
+          }
+        ],
+        "/mailchimp-stack/WebhooksApi/Default/POST/ApiPermission.Test.mailchimpstackWebhooksApi76E76A69.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebhooksApiPOSTApiPermissionTestmailchimpstackWebhooksApi76E76A69POST27BEDFCA"
+          }
+        ],
+        "/mailchimp-stack/WebhooksApi/Default/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebhooksApiPOST1C0617D8"
           }
         ],
         "/mailchimp-stack/ApiEndpoint": [

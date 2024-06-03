@@ -29,15 +29,16 @@ public class InfrastructureStack extends Stack {
                 .build();
 
         // Create API Gateway
-        RestApi api = RestApi.Builder.create(this, "MyApi")
+        RestApi api = RestApi.Builder.create(this, "WebhooksApi")
                 .build();
 
         // Create Integration between Lambda and API Gateway
         LambdaIntegration lambdaIntegration = LambdaIntegration.Builder.create(lambdaFunction)
                 .build();
 
-        // Create API Gateway Method
-        api.getRoot().addMethod("GET", lambdaIntegration);
+        // Create API Gateway Methods
+        api.getRoot().addMethod("HEAD", lambdaIntegration);
+        api.getRoot().addMethod("POST", lambdaIntegration);
 
         // Output the API Gateway endpoint
         CfnOutput.Builder.create(this, "ApiEndpoint")
