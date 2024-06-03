@@ -49,3 +49,6 @@ build/
 !/.idea/compiler.xml
 !/.idea/jarRepositories.xml
 !/infrastructure/target/
+!/.idea/workspace.xml
+!/assets/original-function.jar
+!/functions/target/

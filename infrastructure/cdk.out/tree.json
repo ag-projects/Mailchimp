@@ -105,7 +105,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar"
+                      "s3Key": "6e5abdb4a7a6504c3e6449bef0f3a619b93c73805de2bd635a94712cb5b22756.jar"
                     },
                     "functionName": "MailchimpWebhooksLambda",
                     "handler": "com.quickfee.lambda.WebhooksHandler::handleRequest",

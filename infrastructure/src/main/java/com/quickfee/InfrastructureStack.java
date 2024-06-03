@@ -1,4 +1,4 @@
-package com.myorg;
+package com.quickfee;
 
 import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.Duration;
@@ -40,10 +40,12 @@ public class InfrastructureStack extends Stack {
         api.getRoot().addMethod("HEAD", lambdaIntegration);
         api.getRoot().addMethod("POST", lambdaIntegration);
 
-        // Create API dev and test stages
+        // Create dev stage
         Deployment devDeployment = createDeployment(api, "DevDeployment", "Dev Staging");
         Stage devStage = createStage("DevStage", "dev", devDeployment);
         api.setDeploymentStage(devStage);
+
+        // Create test stage
         Deployment testDeployment = createDeployment(api, "TestDeployment","Test Staging");
         Stage testStage = createStage("TestStage", "test", testDeployment);
         api.setDeploymentStage(testStage);

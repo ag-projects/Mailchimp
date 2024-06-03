@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2adc95d-2295-4365-b0bc-a19e68e04691" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/function.jar" beforeDir="false" afterPath="$PROJECT_DIR$/assets/function.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/original-function.jar" beforeDir="false" afterPath="$PROJECT_DIR$/assets/original-function.jar" afterDir="false" />
@@ -15,9 +13,11 @@
       <change beforePath="$PROJECT_DIR$/infrastructure/cdk.out/mailchimp-stack.template.json" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/cdk.out/mailchimp-stack.template.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/cdk.out/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/cdk.out/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/cdk.out/tree.json" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/cdk.out/tree.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/myorg/InfrastructureStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/myorg/InfrastructureStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/myorg/InfrastructureApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/quickfee/InfrastructureApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/com/myorg/InfrastructureStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/com/quickfee/InfrastructureStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/target/classes/com/myorg/InfrastructureStack.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/target/infrastructure-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/target/infrastructure-0.1.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +73,7 @@
       <updated>1717367594055</updated>
       <workItem from="1717367595049" duration="8229000" />
       <workItem from="1717375955408" duration="915000" />
-      <workItem from="1717376945457" duration="876000" />
+      <workItem from="1717376945457" duration="1751000" />
     </task>
     <servers />
   </component>

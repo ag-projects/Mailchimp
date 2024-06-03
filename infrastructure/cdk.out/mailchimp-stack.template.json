@@ -41,7 +41,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar"
+     "S3Key": "6e5abdb4a7a6504c3e6449bef0f3a619b93c73805de2bd635a94712cb5b22756.jar"
     },
     "FunctionName": "MailchimpWebhooksLambda",
     "Handler": "com.quickfee.lambda.WebhooksHandler::handleRequest",
@@ -60,7 +60,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "mailchimp-stack/mail-chimp-webhooks/Resource",
-    "aws:asset:path": "asset.d17bfd101553f0bbba668d5b922ad1c1b656e26c477fbd5929d38d2d373bf558.jar",
+    "aws:asset:path": "asset.6e5abdb4a7a6504c3e6449bef0f3a619b93c73805de2bd635a94712cb5b22756.jar",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }
